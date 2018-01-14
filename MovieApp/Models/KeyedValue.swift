@@ -1,6 +1,6 @@
 //
 //  KeyedValue.swift
-//  BaseCore
+//  MovieAppCore
 //
 //  Created by Rifat Firdaus on 11/18/16.
 //  Copyright © 2016 Suitmedia. All rights reserved.

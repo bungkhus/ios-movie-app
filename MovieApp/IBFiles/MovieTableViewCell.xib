@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MovieTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="81" id="hEb-ps-6TE" customClass="MovieTableViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hEb-ps-6TE" id="hg0-W5-cWC">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-zZ-PWE">
+                        <rect key="frame" x="8" y="8" width="359" height="64.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="sjv-zZ-PWE" firstAttribute="leading" secondItem="hg0-W5-cWC" secondAttribute="leading" constant="8" id="5av-GM-J5J"/>
+                    <constraint firstItem="sjv-zZ-PWE" firstAttribute="top" secondItem="hg0-W5-cWC" secondAttribute="top" constant="8" id="7px-Lo-nKP"/>
+                    <constraint firstAttribute="bottom" secondItem="sjv-zZ-PWE" secondAttribute="bottom" constant="8" id="Sf2-z9-jxu"/>
+                    <constraint firstAttribute="trailing" secondItem="sjv-zZ-PWE" secondAttribute="trailing" constant="8" id="hRn-62-Jg7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cardView" destination="sjv-zZ-PWE" id="XxO-Aq-1Bb"/>
+            </connections>
+            <point key="canvasLocation" x="48.5" y="-13.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,6 +1,6 @@
 //
-//  BaseCore.swift
-//  BaseCore
+//  MovieAppCore.swift
+//  MovieAppCore
 //
 //  Created by Rifat Firdaus on 11/18/16.
 //  Copyright © 2016 Suitmedia. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-public class BaseCore: NSObject {
+public class MovieAppCore: NSObject {
     public static func setup(home: String, customSessionManager: BaseSessionManager? = nil) {
         let schemaVersion:UInt64 = 1
         var config = Realm.Configuration(
@@ -24,9 +24,9 @@ public class BaseCore: NSObject {
         if let url = config.fileURL {
             print(url.absoluteString)
         }
-        BaseCoreService.instance.home = home
+        MovieAppCoreService.instance.home = home
         if let customSessionManager = customSessionManager {
-            BaseCoreService.instance.manager = customSessionManager
+            MovieAppCoreService.instance.manager = customSessionManager
         }
     }
     

@@ -84,21 +84,21 @@ extension UIViewController {
 //        frostedViewController?.panGestureRecognized(recognizer)
 //    }
 //
-//    func setupTitle(_ title: String? = "title") {
-////        var items = [UIBarButtonItem]()
-//        if let title = title {
-//            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-//            label.textColor = UIColor.primary()
-//            label.textAlignment = .center
-//            label.text = title
-//            label.font = UIFont.systemFont(ofSize: 18)
-////            let barButtonItemMenu = UIBarButtonItem(customView: label)
-////            items.append(barButtonItemMenu)
-////            navigationItem.title = title
-//            navigationItem.titleView = label
-//        }
-////        navigationItem .leftBarButtonItems = items
-//    }
+    func setupTitle(_ title: String? = "title") {
+//        var items = [UIBarButtonItem]()
+        if let title = title {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
+            label.textColor = UIColor.primary()
+            label.textAlignment = .center
+            label.text = title
+            label.font = UIFont.systemFont(ofSize: 18)
+//            let barButtonItemMenu = UIBarButtonItem(customView: label)
+//            items.append(barButtonItemMenu)
+//            navigationItem.title = title
+            navigationItem.titleView = label
+        }
+//        navigationItem .leftBarButtonItems = items
+    }
 //
 ////    func showAlertDialog(title: String? = nil, message: String) {
 ////        //let image = UIImage(named: "pexels-photo-103290")
