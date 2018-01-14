@@ -13,5 +13,6 @@ target 'MovieApp' do
   pod 'SVProgressHUD'
   pod 'AlamofireImage'
   pod 'DZNEmptyDataSet'
+  pod 'youtube-ios-player-helper', '~> 0.1.4'
 
 end

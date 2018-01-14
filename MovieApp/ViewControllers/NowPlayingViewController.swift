@@ -26,6 +26,8 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTitle("Now Playing")
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.emptyDataSetSource = self

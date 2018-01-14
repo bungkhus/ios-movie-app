@@ -13,24 +13,40 @@ class MovieVideosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "VideoTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
+        tableView.rowHeight = 210
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension MovieVideosViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+//        if interactor.casts.count > 5 {
+//            return 2
+//        }
+//        return interactor.casts.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
+        cell.selectionStyle = .none
+//        if self.interactor.casts.count > 0 {
+//            cell.cast = self.interactor.casts[indexPath.row]
+//        }
+        return cell
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        let controller = MovieDetailViewController.instantiate(id: self.interactor.movies[indexPath.row].identifier)
+        //        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }

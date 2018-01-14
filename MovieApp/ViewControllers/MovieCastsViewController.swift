@@ -16,7 +16,7 @@ class MovieCastsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var refreshed = false
-    var movieId: Int64 = 354912
+    var movieId: Int64 = 0
     
     let interactor = MovieCastInteractor(perPage: 5, storeKey: "Cast")
     
@@ -30,13 +30,12 @@ class MovieCastsViewController: UIViewController {
         tableView.emptyDataSetDelegate = self
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
         tableView.rowHeight = 100
-        print("movieId = \(movieId)")
+        
         setupTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("movieIdviewDidAppear = \(movieId)")
         
         if !refreshed {
             if interactor.casts.count > 0 {
