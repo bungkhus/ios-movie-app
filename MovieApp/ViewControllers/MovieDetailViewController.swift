@@ -112,25 +112,12 @@ class MovieDetailViewController: MXSegmentedPagerController {
                     }
                 }
             }
-        } else if segue.identifier == "mx_page_2" {
+        } else if segue.identifier == "mx_page_1" {
             print("2")
-//            let controller = segue.destination as! MovieSynopsisViewController
-//            if let movie = self.interactor.movie {
-//                controller.setupView(movie: movie)
-//                self.updateHeader()
-//
-//                interactor.refresh(withId: movieId, success: { () -> (Void) in
-//                    if let movie = self.interactor.movie {
-//                        controller.setupView(movie: movie)
-//                        self.updateHeader()
-//                    }
-//                }) { (error) -> (Void) in
-//                    print(error.localizedDescription)
-//                    SVProgressHUD.showError(withStatus: error.localizedDescription)
-//                    SVProgressHUD.dismiss(withDelay: 2.0)
-//
-//                }
-//            }
+            let controller = segue.destination as! MovieCastsViewController
+            if let movie = self.interactor.movie {
+                controller.movieId = movie.identifier
+            }
         } else {
             print("3")
         }

@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="2765" y="1323"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Casts View Controller-->
         <scene sceneID="ZgR-iy-CRx">
             <objects>
-                <viewController id="Il3-px-b2s" sceneMemberID="viewController">
+                <viewController id="Il3-px-b2s" customClass="MovieCastsViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ATn-88-3y6"/>
                         <viewControllerLayoutGuide type="bottom" id="EI4-SS-sbM"/>
@@ -83,17 +83,32 @@
                     <view key="view" contentMode="scaleToFill" id="6U7-KQ-VOd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8zV-nT-rjL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8zV-nT-rjL" firstAttribute="leading" secondItem="6U7-KQ-VOd" secondAttribute="leading" id="40X-zP-S3e"/>
+                            <constraint firstItem="EI4-SS-sbM" firstAttribute="top" secondItem="8zV-nT-rjL" secondAttribute="bottom" id="6xb-AK-zlU"/>
+                            <constraint firstItem="8zV-nT-rjL" firstAttribute="top" secondItem="6U7-KQ-VOd" secondAttribute="top" id="xXo-u5-HNZ"/>
+                            <constraint firstAttribute="trailing" secondItem="8zV-nT-rjL" secondAttribute="trailing" id="zRP-MM-jtJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8zV-nT-rjL" id="lX9-2e-nsK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPm-cI-ndR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3561" y="1323"/>
+            <point key="canvasLocation" x="3560.8000000000002" y="1322.7886056971515"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Videos View Controller-->
         <scene sceneID="lfR-yt-PRa">
             <objects>
-                <viewController id="oIW-EX-is3" sceneMemberID="viewController">
+                <viewController id="oIW-EX-is3" customClass="MovieVideosViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rrL-Od-P8P"/>
                         <viewControllerLayoutGuide type="bottom" id="Ggx-Ta-wUs"/>
@@ -102,20 +117,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aph-Kw-Ysc">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zJi-oa-1yL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zJi-oa-1yL" firstAttribute="top" secondItem="4lO-1i-jAb" secondAttribute="top" id="Fdg-ON-gm4"/>
+                            <constraint firstItem="Ggx-Ta-wUs" firstAttribute="top" secondItem="zJi-oa-1yL" secondAttribute="bottom" id="XbZ-vZ-vSl"/>
+                            <constraint firstAttribute="trailing" secondItem="zJi-oa-1yL" secondAttribute="trailing" id="kuM-7q-xQt"/>
+                            <constraint firstItem="zJi-oa-1yL" firstAttribute="leading" secondItem="4lO-1i-jAb" secondAttribute="leading" id="xdL-hv-ZlZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="zJi-oa-1yL" id="ZQK-UH-I4v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGn-7u-6M9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3561" y="2021"/>
+            <point key="canvasLocation" x="3560.8000000000002" y="2020.8395802098953"/>
         </scene>
         <!--Movie Synopsis View Controller-->
         <scene sceneID="se2-cf-u1F">

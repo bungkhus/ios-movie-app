@@ -160,6 +160,36 @@ open class MovieAppCoreService: NSObject {
             }
         }
     }
+    
+    func getMovieCast(withId id: Int64, params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Cast]>>) -> (Void)) {
+        
+        let request = manager.request(home + "/movie/\(id)/credits", method: .get, parameters: params)
+        request.responseJSON { response in
+            switch response.result {
+            case let .success(value):
+                let json = JSON(value)
+                let resultJson = json["cast"]
+                
+                if resultJson.arrayValue.count > 0 {
+                    var items = [Cast]()
+                    for itemJson in resultJson.arrayValue {
+                        if let item = Cast.with(json: itemJson) {
+                            items.append(item)
+                        }
+                    }
+                    let pagination = Pagination<[Cast]>(total: 5, currentPage: 1, lastPage: 1, data: items)
+                    callback(.success(pagination))
+                } else {
+                    let error = NSError(domain: "The Movie DB", code: -1, userInfo: [NSLocalizedDescriptionKey: "Data doesn't exists."])
+                    print(error.localizedDescription)
+                    callback(.failure(error))
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+                callback(.failure(error as NSError))
+            }
+        }
+    }
 }
 
 open class BaseSessionManager: SessionManager {

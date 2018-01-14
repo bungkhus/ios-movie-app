@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CastTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="108" id="b9Y-6J-uwT" customClass="CastTableViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b9Y-6J-uwT" id="GOi-C1-IIH">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mMD-kN-q5m">
+                        <rect key="frame" x="16" y="8" width="64" height="91.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="4FX-kf-7cb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Lenon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-Pq-2TL">
+                        <rect key="frame" x="88" y="16" width="279" height="19.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                        <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="as Boob" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-gT-FJp">
+                        <rect key="frame" x="88" y="39.5" width="271" height="16.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                        <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="g3y-Pq-2TL" firstAttribute="top" secondItem="GOi-C1-IIH" secondAttribute="top" constant="16" id="2n4-fb-bUr"/>
+                    <constraint firstItem="l7q-gT-FJp" firstAttribute="leading" secondItem="mMD-kN-q5m" secondAttribute="trailing" constant="8" id="Al3-5x-5ax"/>
+                    <constraint firstItem="mMD-kN-q5m" firstAttribute="leading" secondItem="GOi-C1-IIH" secondAttribute="leading" constant="16" id="DHg-c5-2vd"/>
+                    <constraint firstAttribute="bottom" secondItem="mMD-kN-q5m" secondAttribute="bottom" constant="8" id="ELp-dD-gAa"/>
+                    <constraint firstItem="mMD-kN-q5m" firstAttribute="top" secondItem="GOi-C1-IIH" secondAttribute="top" constant="8" id="VTI-nr-03J"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="l7q-gT-FJp" secondAttribute="trailing" constant="8" id="aSN-zz-eP0"/>
+                    <constraint firstAttribute="trailing" secondItem="g3y-Pq-2TL" secondAttribute="trailing" constant="8" id="lFZ-HJ-qaK"/>
+                    <constraint firstItem="g3y-Pq-2TL" firstAttribute="leading" secondItem="mMD-kN-q5m" secondAttribute="trailing" constant="8" id="nXf-s0-uIh"/>
+                    <constraint firstItem="l7q-gT-FJp" firstAttribute="top" secondItem="g3y-Pq-2TL" secondAttribute="bottom" constant="4" id="prp-Uu-d7n"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="88" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="imageProfile" destination="mMD-kN-q5m" id="idO-cq-VoR"/>
+                <outlet property="lableAs" destination="l7q-gT-FJp" id="gSN-wR-cM5"/>
+                <outlet property="lableName" destination="g3y-Pq-2TL" id="ptf-g5-VKT"/>
+            </connections>
+            <point key="canvasLocation" x="18.5" y="69"/>
+        </tableViewCell>
+    </objects>
+</document>
