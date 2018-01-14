@@ -13,7 +13,7 @@ class MovieDetailViewController: MXSegmentedPagerController {
     
     private let title0 = "Synopsis"
     private let title1 = "Top Billed Cast"
-    private let title2 = "Trailers"
+    private let title2 = "Videos"
     private let interactor = MovieDetailInteractor()
     private let xib = Bundle.main.loadNibNamed("MovieDetailHeader", owner: nil, options: nil)?[0] as! MovieDetailHeader
     
@@ -53,12 +53,12 @@ class MovieDetailViewController: MXSegmentedPagerController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        print("movieId \(movieId)")
         if !refreshed {
             SVProgressHUD.show()
             interactor.refresh(withId: movieId, success: { () -> (Void) in
                 if let movie = self.interactor.movie {
-//                    MovieSynopsisViewController.instantiate().setupView(movie: movie)
+                    MovieSynopsisViewController.instantiate().overview = movie.desc
                     self.updateHeader()
                     self.refreshed = true
                     SVProgressHUD.dismiss()
@@ -93,6 +93,10 @@ class MovieDetailViewController: MXSegmentedPagerController {
             if let movie = self.interactor.movie {
                 controller.setupView(movie: movie)
                 self.updateHeader()
+                
+                if let overview = movie.desc {
+                    controller.overview = overview
+                }
                 
                 if !refreshed {
                     SVProgressHUD.show()

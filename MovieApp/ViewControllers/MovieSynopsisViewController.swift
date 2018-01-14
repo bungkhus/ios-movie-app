@@ -12,6 +12,8 @@ class MovieSynopsisViewController: UIViewController {
     
     @IBOutlet weak var labelSynopsis: UILabel!
     
+    var overview: String?
+    
     static func instantiate() -> MovieSynopsisViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MovieSynopsisSID") as! MovieSynopsisViewController
@@ -26,7 +28,18 @@ class MovieSynopsisViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+     
+        if let overview = overview {
+            labelSynopsis.text = overview
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if let overview = overview {
+            labelSynopsis.text = overview
+        }
     }
 
 }
