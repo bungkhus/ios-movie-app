@@ -29,6 +29,8 @@
 		8F19E63F200BF35800CC897A /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F19E63E200BF35800CC897A /* CastTableViewCell.xib */; };
 		8F19E641200BF50700CC897A /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E640200BF50700CC897A /* Cast.swift */; };
 		8F19E643200BF69C00CC897A /* MovieCastInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E642200BF69C00CC897A /* MovieCastInteractor.swift */; };
+		8F19E646200C08A000CC897A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E645200C08A000CC897A /* Video.swift */; };
+		8F19E648200C096900CC897A /* MovieVideoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E647200C096900CC897A /* MovieVideoInteractor.swift */; };
 		8F866C8E200AE2D5005072F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866C8D200AE2D5005072F9 /* AppDelegate.swift */; };
 		8F866C93200AE2D5005072F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F866C91200AE2D5005072F9 /* Main.storyboard */; };
 		8F866C95200AE2D5005072F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F866C94200AE2D5005072F9 /* Assets.xcassets */; };
@@ -106,6 +108,8 @@
 		8F19E63E200BF35800CC897A /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
 		8F19E640200BF50700CC897A /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		8F19E642200BF69C00CC897A /* MovieCastInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastInteractor.swift; sourceTree = "<group>"; };
+		8F19E645200C08A000CC897A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		8F19E647200C096900CC897A /* MovieVideoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideoInteractor.swift; sourceTree = "<group>"; };
 		8F866C8A200AE2D5005072F9 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F866C8D200AE2D5005072F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F866C92200AE2D5005072F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 				8F866D47200B3642005072F9 /* UpcomingInteractor.swift */,
 				8F19E625200B9EF300CC897A /* MovieDetailInteractor.swift */,
 				8F19E642200BF69C00CC897A /* MovieCastInteractor.swift */,
+				8F19E647200C096900CC897A /* MovieVideoInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				8F866D27200B233B005072F9 /* Movie.swift */,
 				8F19E62E200BCBFD00CC897A /* Genres.swift */,
 				8F19E640200BF50700CC897A /* Cast.swift */,
+				8F19E645200C08A000CC897A /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,6 +592,7 @@
 				8F19E616200B8FC400CC897A /* MXScrollViewController.m in Sources */,
 				8F866D2E200B2A3E005072F9 /* DateHelper.swift in Sources */,
 				8F866D24200B154D005072F9 /* DetachableObject.swift in Sources */,
+				8F19E648200C096900CC897A /* MovieVideoInteractor.swift in Sources */,
 				8F866D2A200B235B005072F9 /* BaseInteractor.swift in Sources */,
 				8F19E61A200B8FC400CC897A /* MXSegmentedPagerController.m in Sources */,
 				8F866D1A200B153D005072F9 /* UIColor+Extension.swift in Sources */,
@@ -607,6 +614,7 @@
 				8F866D28200B233B005072F9 /* Movie.swift in Sources */,
 				8F19E637200BF25B00CC897A /* MovieVideosViewController.swift in Sources */,
 				8F866C8E200AE2D5005072F9 /* AppDelegate.swift in Sources */,
+				8F19E646200C08A000CC897A /* Video.swift in Sources */,
 				8F866D42200B32E3005072F9 /* MovieCollectionViewCell.swift in Sources */,
 				8F866D34200B2E0F005072F9 /* PopularViewController.swift in Sources */,
 				8F19E61B200B8FC400CC897A /* MXSegmentedPager.m in Sources */,

@@ -40,6 +40,11 @@ class MovieDetailHeader: UIView {
                 }
                 lableVoters.text = "(\(movie.voteCount.format(f: "1.000")) voters)"
                 lableRatting.text = "\(movie.voteAverage)"
+                
+                let hours = movie.runtime / 60
+                let minutes = movie.runtime % 60
+                labelRuntime.text = "\(hours)h \(minutes)m"
+                
                 if let photoUrl = movie.backdropPath, let url = URL(string: ("\(ApiConfig.backdropHomeUrl)\(photoUrl)")) {
                     imageBackdrop.af_setImage(withURL: url, placeholderImage: UIImage(named: "play-button"), imageTransition: .crossDissolve(0.2))
                 } else {

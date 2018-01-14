@@ -190,6 +190,36 @@ open class MovieAppCoreService: NSObject {
             }
         }
     }
+    
+    func getMovieVideos(withId id: Int64, params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Video]>>) -> (Void)) {
+        
+        let request = manager.request(home + "/movie/\(id)/videos", method: .get, parameters: params)
+        request.responseJSON { response in
+            switch response.result {
+            case let .success(value):
+                let json = JSON(value)
+                let resultJson = json["results"]
+                
+                if resultJson.arrayValue.count > 0 {
+                    var items = [Video]()
+                    for itemJson in resultJson.arrayValue {
+                        if let item = Video.with(json: itemJson) {
+                            items.append(item)
+                        }
+                    }
+                    let pagination = Pagination<[Video]>(total: resultJson.arrayValue.count, currentPage: 1, lastPage: 1, data: items)
+                    callback(.success(pagination))
+                } else {
+                    let error = NSError(domain: "The Movie DB", code: -1, userInfo: [NSLocalizedDescriptionKey: "Data doesn't exists."])
+                    print(error.localizedDescription)
+                    callback(.failure(error))
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+                callback(.failure(error as NSError))
+            }
+        }
+    }
 }
 
 open class BaseSessionManager: SessionManager {

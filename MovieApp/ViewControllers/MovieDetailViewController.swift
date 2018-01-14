@@ -88,7 +88,6 @@ class MovieDetailViewController: MXSegmentedPagerController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print("prepare \(segue.identifier)")
         if segue.identifier == "mx_page_0" {
             let controller = segue.destination as! MovieSynopsisViewController
             if let movie = self.interactor.movie {
@@ -113,13 +112,15 @@ class MovieDetailViewController: MXSegmentedPagerController {
                 }
             }
         } else if segue.identifier == "mx_page_1" {
-            print("2")
             let controller = segue.destination as! MovieCastsViewController
             if let movie = self.interactor.movie {
                 controller.movieId = movie.identifier
             }
         } else {
-            print("3")
+            let controller = segue.destination as! MovieVideosViewController
+            if let movie = self.interactor.movie {
+                controller.movieId = movie.identifier
+            }
         }
     }
     

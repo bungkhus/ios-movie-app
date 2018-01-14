@@ -44,21 +44,21 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-aR-GxJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-aR-GxJ">
                     <rect key="frame" x="110" y="43.5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="pTc-33-HRR"/>
                         <constraint firstAttribute="width" constant="20" id="zXx-JQ-2zJ"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites" translatesAutoresizingMaskIntoConstraints="NO" id="V37-g6-Sff">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="V37-g6-Sff">
                     <rect key="frame" x="110" y="71" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="OVy-Kt-ND5"/>
                         <constraint firstAttribute="width" constant="20" id="cZg-cx-Pt0"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites" translatesAutoresizingMaskIntoConstraints="NO" id="vGv-5X-UbH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass" translatesAutoresizingMaskIntoConstraints="NO" id="vGv-5X-UbH">
                     <rect key="frame" x="110" y="99" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="67O-y7-pPh"/>
@@ -155,7 +155,10 @@
         </view>
     </objects>
     <resources>
+        <image name="calendar" width="21" height="21"/>
         <image name="favorites" width="85" height="85"/>
         <image name="heart" width="21" height="21"/>
+        <image name="hourglass" width="21" height="21"/>
+        <image name="star" width="21" height="21"/>
     </resources>
 </document>

@@ -13,13 +13,26 @@ import youtube_ios_player_helper
 class VideoTableViewCell: UITableViewCell {
 
     @IBOutlet var youtubeView: YTPlayerView!
+    @IBOutlet var lableTitle: UILabel!
     
     var videoKey: String = "zNCz4mQzfEI"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupVideoPlayer(videoKey: videoKey)
+//        setupVideoPlayer(videoKey: videoKey)
+    }
+    
+    var video: Video? {
+        didSet {
+            if let video = video, let key = video.key {
+                videoKey = key
+                setupVideoPlayer(videoKey: videoKey)
+                if let title = video.name {
+                    lableTitle.text = title
+                }
+            }
+        }
     }
     
     // MARK: METHODS

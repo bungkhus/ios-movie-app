@@ -48,7 +48,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-3w-kqE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-3w-kqE">
                                 <rect key="frame" x="8" y="106" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="MqX-JZ-ytX"/>
@@ -104,7 +104,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="favorites" width="85" height="85"/>
         <image name="play-button" width="21" height="21"/>
+        <image name="star" width="21" height="21"/>
     </resources>
 </document>
