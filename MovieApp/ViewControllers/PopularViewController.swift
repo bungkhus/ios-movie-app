@@ -110,8 +110,7 @@ extension PopularViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetailSID")
+        let controller = MovieDetailViewController.instantiate(id: self.interactor.movies[indexPath.row].identifier)
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

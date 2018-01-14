@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8F19E5FD200B673A00CC897A /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E5FC200B673A00CC897A /* ApiConfig.swift */; };
+		8F19E614200B8FC400CC897A /* MXScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E601200B8FC300CC897A /* MXScrollView.m */; };
+		8F19E615200B8FC400CC897A /* MXParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E602200B8FC300CC897A /* MXParallaxHeader.m */; };
+		8F19E616200B8FC400CC897A /* MXScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E603200B8FC300CC897A /* MXScrollViewController.m */; };
+		8F19E617200B8FC400CC897A /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E609200B8FC300CC897A /* HMSegmentedControl.m */; };
+		8F19E618200B8FC400CC897A /* MXPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E60D200B8FC300CC897A /* MXPagerViewController.m */; };
+		8F19E619200B8FC400CC897A /* MXPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E60E200B8FC300CC897A /* MXPagerView.m */; };
+		8F19E61A200B8FC400CC897A /* MXSegmentedPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E612200B8FC300CC897A /* MXSegmentedPagerController.m */; };
+		8F19E61B200B8FC400CC897A /* MXSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E613200B8FC300CC897A /* MXSegmentedPager.m */; };
+		8F19E620200B94BA00CC897A /* MovieDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F19E61F200B94BA00CC897A /* MovieDetailHeader.xib */; };
+		8F19E624200B9CBA00CC897A /* MovieDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E623200B9CBA00CC897A /* MovieDetailHeader.swift */; };
+		8F19E626200B9EF300CC897A /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E625200B9EF300CC897A /* MovieDetailInteractor.swift */; };
+		8F19E62D200BB1EC00CC897A /* MovieSynopsisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E62C200BB1EC00CC897A /* MovieSynopsisViewController.swift */; };
+		8F19E62F200BCBFD00CC897A /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19E62E200BCBFD00CC897A /* Genres.swift */; };
 		8F866C8E200AE2D5005072F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866C8D200AE2D5005072F9 /* AppDelegate.swift */; };
 		8F866C93200AE2D5005072F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F866C91200AE2D5005072F9 /* Main.storyboard */; };
 		8F866C95200AE2D5005072F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F866C94200AE2D5005072F9 /* Assets.xcassets */; };
@@ -55,6 +68,28 @@
 /* Begin PBXFileReference section */
 		2355004142A086242E264D5A /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 		8F19E5FC200B673A00CC897A /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		8F19E601200B8FC300CC897A /* MXScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXScrollView.m; sourceTree = "<group>"; };
+		8F19E602200B8FC300CC897A /* MXParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXParallaxHeader.m; sourceTree = "<group>"; };
+		8F19E603200B8FC300CC897A /* MXScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXScrollViewController.m; sourceTree = "<group>"; };
+		8F19E604200B8FC300CC897A /* MXScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXScrollView.h; sourceTree = "<group>"; };
+		8F19E605200B8FC300CC897A /* MXParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXParallaxHeader.h; sourceTree = "<group>"; };
+		8F19E606200B8FC300CC897A /* MXScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXScrollViewController.h; sourceTree = "<group>"; };
+		8F19E608200B8FC300CC897A /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		8F19E609200B8FC300CC897A /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		8F19E60B200B8FC300CC897A /* MXPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPagerViewController.h; sourceTree = "<group>"; };
+		8F19E60C200B8FC300CC897A /* MXPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPagerView.h; sourceTree = "<group>"; };
+		8F19E60D200B8FC300CC897A /* MXPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPagerViewController.m; sourceTree = "<group>"; };
+		8F19E60E200B8FC300CC897A /* MXPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPagerView.m; sourceTree = "<group>"; };
+		8F19E610200B8FC300CC897A /* MXSegmentedPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSegmentedPagerController.h; sourceTree = "<group>"; };
+		8F19E611200B8FC300CC897A /* MXSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSegmentedPager.h; sourceTree = "<group>"; };
+		8F19E612200B8FC300CC897A /* MXSegmentedPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSegmentedPagerController.m; sourceTree = "<group>"; };
+		8F19E613200B8FC300CC897A /* MXSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSegmentedPager.m; sourceTree = "<group>"; };
+		8F19E61C200B900A00CC897A /* MovieApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		8F19E61F200B94BA00CC897A /* MovieDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailHeader.xib; sourceTree = "<group>"; };
+		8F19E623200B9CBA00CC897A /* MovieDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailHeader.swift; sourceTree = "<group>"; };
+		8F19E625200B9EF300CC897A /* MovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractor.swift; sourceTree = "<group>"; };
+		8F19E62C200BB1EC00CC897A /* MovieSynopsisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSynopsisViewController.swift; sourceTree = "<group>"; };
+		8F19E62E200BCBFD00CC897A /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		8F866C8A200AE2D5005072F9 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F866C8D200AE2D5005072F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F866C92200AE2D5005072F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +157,105 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8F19E5FF200B8FC300CC897A /* External */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E600200B8FC300CC897A /* MXParallaxHeader */,
+				8F19E607200B8FC300CC897A /* HMSegmentedControl */,
+				8F19E60A200B8FC300CC897A /* MXPagerView */,
+				8F19E60F200B8FC300CC897A /* MXSegmentedPager */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		8F19E600200B8FC300CC897A /* MXParallaxHeader */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E601200B8FC300CC897A /* MXScrollView.m */,
+				8F19E602200B8FC300CC897A /* MXParallaxHeader.m */,
+				8F19E603200B8FC300CC897A /* MXScrollViewController.m */,
+				8F19E604200B8FC300CC897A /* MXScrollView.h */,
+				8F19E605200B8FC300CC897A /* MXParallaxHeader.h */,
+				8F19E606200B8FC300CC897A /* MXScrollViewController.h */,
+			);
+			path = MXParallaxHeader;
+			sourceTree = "<group>";
+		};
+		8F19E607200B8FC300CC897A /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E608200B8FC300CC897A /* HMSegmentedControl.h */,
+				8F19E609200B8FC300CC897A /* HMSegmentedControl.m */,
+			);
+			path = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
+		8F19E60A200B8FC300CC897A /* MXPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E60B200B8FC300CC897A /* MXPagerViewController.h */,
+				8F19E60C200B8FC300CC897A /* MXPagerView.h */,
+				8F19E60D200B8FC300CC897A /* MXPagerViewController.m */,
+				8F19E60E200B8FC300CC897A /* MXPagerView.m */,
+			);
+			path = MXPagerView;
+			sourceTree = "<group>";
+		};
+		8F19E60F200B8FC300CC897A /* MXSegmentedPager */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E610200B8FC300CC897A /* MXSegmentedPagerController.h */,
+				8F19E611200B8FC300CC897A /* MXSegmentedPager.h */,
+				8F19E612200B8FC300CC897A /* MXSegmentedPagerController.m */,
+				8F19E613200B8FC300CC897A /* MXSegmentedPager.m */,
+			);
+			path = MXSegmentedPager;
+			sourceTree = "<group>";
+		};
+		8F19E61E200B949300CC897A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E61F200B94BA00CC897A /* MovieDetailHeader.xib */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		8F19E621200B9C7A00CC897A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8F866D3F200B32C3005072F9 /* MovieTableViewCell.swift */,
+				8F866D41200B32E3005072F9 /* MovieCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8F19E622200B9C8000CC897A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8F19E623200B9CBA00CC897A /* MovieDetailHeader.swift */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		8F19E62A200BB03400CC897A /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				8F866D35200B2E2B005072F9 /* UpcomingViewController.swift */,
+				8F866D33200B2E0F005072F9 /* PopularViewController.swift */,
+				8F866D31200B2DF5005072F9 /* NowPlayingViewController.swift */,
+			);
+			name = Tab;
+			sourceTree = "<group>";
+		};
+		8F19E62B200BB03900CC897A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8F866D37200B2E5F005072F9 /* MovieDetailViewController.swift */,
+				8F19E62C200BB1EC00CC897A /* MovieSynopsisViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		8F866C81200AE2D5005072F9 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +278,7 @@
 		8F866C8C200AE2D5005072F9 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				8F19E5FF200B8FC300CC897A /* External */,
 				8F866D10200B0515005072F9 /* Extentions */,
 				8F866D0F200B050B005072F9 /* Helpers */,
 				8F866D0E200B04EC005072F9 /* IBFiles */,
@@ -155,6 +290,7 @@
 				8F19E5FC200B673A00CC897A /* ApiConfig.swift */,
 				8F866C94200AE2D5005072F9 /* Assets.xcassets */,
 				8F866C99200AE2D5005072F9 /* Info.plist */,
+				8F19E61C200B900A00CC897A /* MovieApp-Bridging-Header.h */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
@@ -169,10 +305,8 @@
 		8F866D0A200B03FB005072F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8F866D31200B2DF5005072F9 /* NowPlayingViewController.swift */,
-				8F866D33200B2E0F005072F9 /* PopularViewController.swift */,
-				8F866D35200B2E2B005072F9 /* UpcomingViewController.swift */,
-				8F866D37200B2E5F005072F9 /* MovieDetailViewController.swift */,
+				8F19E62B200BB03900CC897A /* Detail */,
+				8F19E62A200BB03400CC897A /* Tab */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +318,7 @@
 				8F866D45200B3628005072F9 /* NowPlayingInteractor.swift */,
 				8F866D43200B3617005072F9 /* PopularInteractor.swift */,
 				8F866D47200B3642005072F9 /* UpcomingInteractor.swift */,
+				8F19E625200B9EF300CC897A /* MovieDetailInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -193,6 +328,7 @@
 			children = (
 				8F866D2B200B23DC005072F9 /* KeyedValue.swift */,
 				8F866D27200B233B005072F9 /* Movie.swift */,
+				8F19E62E200BCBFD00CC897A /* Genres.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,8 +336,8 @@
 		8F866D0D200B04D5005072F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8F866D3F200B32C3005072F9 /* MovieTableViewCell.swift */,
-				8F866D41200B32E3005072F9 /* MovieCollectionViewCell.swift */,
+				8F19E622200B9C8000CC897A /* Header */,
+				8F19E621200B9C7A00CC897A /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +345,7 @@
 		8F866D0E200B04EC005072F9 /* IBFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8F19E61E200B949300CC897A /* Header */,
 				8F866D3A200B313E005072F9 /* Cells */,
 				8F866D39200B3122005072F9 /* Storyboards */,
 			);
@@ -322,6 +459,7 @@
 			files = (
 				8F866D3E200B3245005072F9 /* MovieCollectionViewCell.xib in Resources */,
 				8F866C98200AE2D5005072F9 /* LaunchScreen.storyboard in Resources */,
+				8F19E620200B94BA00CC897A /* MovieDetailHeader.xib in Resources */,
 				8F866C95200AE2D5005072F9 /* Assets.xcassets in Resources */,
 				8F866D3C200B31A7005072F9 /* MovieTableViewCell.xib in Resources */,
 				8F866C93200AE2D5005072F9 /* Main.storyboard in Resources */,
@@ -407,27 +545,39 @@
 			files = (
 				8F866D48200B3642005072F9 /* UpcomingInteractor.swift in Sources */,
 				8F866D32200B2DF5005072F9 /* NowPlayingViewController.swift in Sources */,
+				8F19E615200B8FC400CC897A /* MXParallaxHeader.m in Sources */,
 				8F19E5FD200B673A00CC897A /* ApiConfig.swift in Sources */,
 				8F866D1D200B153D005072F9 /* UISoryboard+Extention.swift in Sources */,
 				8F866D1B200B153D005072F9 /* StringExtension.swift in Sources */,
 				8F866D23200B154D005072F9 /* MovieAppCoreService.swift in Sources */,
+				8F19E62D200BB1EC00CC897A /* MovieSynopsisViewController.swift in Sources */,
 				8F866D46200B3628005072F9 /* NowPlayingInteractor.swift in Sources */,
+				8F19E618200B8FC400CC897A /* MXPagerViewController.m in Sources */,
+				8F19E619200B8FC400CC897A /* MXPagerView.m in Sources */,
 				8F866D2C200B23DC005072F9 /* KeyedValue.swift in Sources */,
+				8F19E616200B8FC400CC897A /* MXScrollViewController.m in Sources */,
 				8F866D2E200B2A3E005072F9 /* DateHelper.swift in Sources */,
 				8F866D24200B154D005072F9 /* DetachableObject.swift in Sources */,
 				8F866D2A200B235B005072F9 /* BaseInteractor.swift in Sources */,
+				8F19E61A200B8FC400CC897A /* MXSegmentedPagerController.m in Sources */,
 				8F866D1A200B153D005072F9 /* UIColor+Extension.swift in Sources */,
 				8F866D40200B32C3005072F9 /* MovieTableViewCell.swift in Sources */,
 				8F866D19200B153D005072F9 /* UIViewExtension.swift in Sources */,
 				8F866D44200B3617005072F9 /* PopularInteractor.swift in Sources */,
+				8F19E617200B8FC400CC897A /* HMSegmentedControl.m in Sources */,
 				8F866D1C200B153D005072F9 /* UIViewController+Additions.swift in Sources */,
 				8F866D36200B2E2B005072F9 /* UpcomingViewController.swift in Sources */,
+				8F19E624200B9CBA00CC897A /* MovieDetailHeader.swift in Sources */,
+				8F19E626200B9EF300CC897A /* MovieDetailInteractor.swift in Sources */,
 				8F866D38200B2E5F005072F9 /* MovieDetailViewController.swift in Sources */,
+				8F19E62F200BCBFD00CC897A /* Genres.swift in Sources */,
 				8F866D22200B154D005072F9 /* MovieAppCore.swift in Sources */,
 				8F866D28200B233B005072F9 /* Movie.swift in Sources */,
 				8F866C8E200AE2D5005072F9 /* AppDelegate.swift in Sources */,
 				8F866D42200B32E3005072F9 /* MovieCollectionViewCell.swift in Sources */,
 				8F866D34200B2E0F005072F9 /* PopularViewController.swift in Sources */,
+				8F19E61B200B8FC400CC897A /* MXSegmentedPager.m in Sources */,
+				8F19E614200B8FC400CC897A /* MXScrollView.m in Sources */,
 				8F866D30200B2A4E005072F9 /* ISO8601.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +725,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bungkhus.movieapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieApp/MovieApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -594,6 +745,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bungkhus.movieapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieApp/MovieApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

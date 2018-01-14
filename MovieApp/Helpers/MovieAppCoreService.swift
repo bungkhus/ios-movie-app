@@ -20,6 +20,36 @@ open class MovieAppCoreService: NSObject {
         self.home = home
     }
     
+    func getMovieDetail(id: Int64, params: [String : String], callback: @escaping (APIResult<Movie>) -> (Void)) {
+        var parameters: [String: AnyObject] = [:]
+        for (key, value) in params {
+            parameters[key] = value as AnyObject?
+        }
+        let request = manager.request(home + "/movie/\(id)", method: .get, parameters: parameters)
+        request.responseJSON { response in
+            switch response.result {
+            case let .success(value):
+                let json = JSON(value)
+                if json.exists(){
+                    if let news = Movie.with(json: json) {
+                        callback(.success(news))
+                    } else {
+                        let error = NSError(domain: "BaliUnited", code: -1, userInfo: [NSLocalizedDescriptionKey: "ERROR: Parsing JSON"])
+                        print(error.localizedDescription)
+                        callback(.failure(error))
+                    }
+                } else {
+                    let error = NSError(domain: "BaliUnited", code: -1, userInfo: [NSLocalizedDescriptionKey: "ERROR: json doesn't exist."])
+                    print(error.localizedDescription)
+                    callback(.failure(error))
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+                callback(.failure(error as NSError))
+            }
+        }
+    }
+    
     func getMovieNowPlaying(params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Movie]>>) -> (Void)) {
         var parameters: [String: AnyObject] = [:]
         for (key, value) in params {

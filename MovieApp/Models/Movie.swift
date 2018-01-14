@@ -18,6 +18,10 @@ class Movie: Object {
     @objc dynamic var backdropPath: String?
     @objc dynamic var originalLanguage: String?
     @objc dynamic var voteAverage: Double = 0
+    @objc dynamic var gendres: String?
+    @objc dynamic var voteCount: Int64 = 0
+    @objc dynamic var runtime: Int64 = 0
+    @objc dynamic public var releaseDate: NSDate?
     
     override public static func primaryKey() -> String? {
         return "identifier"
@@ -53,6 +57,32 @@ class Movie: Object {
         }
         if json["vote_average"].exists() {
             obj?.voteAverage = json["vote_average"].doubleValue
+        }
+        if json["vote_count"].exists() {
+            obj?.voteCount = json["vote_count"].int64Value
+        }
+        if json["runtime"].exists() {
+            obj?.runtime = json["runtime"].int64Value
+        }
+        if json["release_date"].exists() {
+            obj?.releaseDate = DateHelper.iso8601(dateString: json["release_date"].stringValue) as NSDate?
+        }
+        if json["genres"].exists() {
+            let genresJson = json["genres"]
+            if genresJson.arrayValue.count > 0 {
+                var tempString = ""
+                for itemJson in genresJson.arrayValue {
+                    if let item = Genres.with(json: itemJson) {
+                        if let name = item.name {
+                            if tempString != "" {
+                                tempString.append(", ")
+                            }
+                            tempString.append(name)
+                        }
+                    }
+                }
+                obj?.gendres = tempString
+            }
         }
         
         return obj

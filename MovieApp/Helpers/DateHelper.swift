@@ -23,8 +23,8 @@ open class DateHelper: NSObject {
         dateFormatter.locale = Locale(identifier: "id_ID")
         dateFormatter.timeZone = NSTimeZone.local
 //        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.dateFormat = "MMM dd yyyy HH:mm:ss:SSSa"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        dateFormatter.dateFormat = "MMM dd yyyy HH:mm:ss:SSSa"
         return dateFormatter.date(from: dateString)
     }
     
@@ -34,7 +34,8 @@ open class DateHelper: NSObject {
         dateFormatter.timeZone = NSTimeZone.local
 //        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         //        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.dateFormat = "MMM dd yyyy HH:mm:ss:SSSa"
+//        dateFormatter.dateFormat = "MMM dd yyyy HH:mm:ss:SSSa"
+        dateFormatter.dateFormat = "MMM dd yyyy"
         return dateFormatter.string(from: date)
     }
     
