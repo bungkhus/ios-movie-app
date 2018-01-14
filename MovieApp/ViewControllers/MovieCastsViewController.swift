@@ -79,6 +79,11 @@ class MovieCastsViewController: UIViewController {
     }
     
     func refresh() {
+        if movieId == 0 {
+            if let movieId = PreferenceManager.instance.movieId {
+                self.movieId = movieId
+            }
+        }
         interactor.refresh(id: movieId, success: {
             self.tableView.pullToRefreshView.stopAnimating()
             self.tableView.infiniteScrollingView.stopAnimating()

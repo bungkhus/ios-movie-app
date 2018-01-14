@@ -23,6 +23,7 @@ class MovieDetailViewController: MXSegmentedPagerController {
     static func instantiate(id: Int64) -> MovieDetailViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetailSID") as! MovieDetailViewController
+        PreferenceManager.instance.movieId = id
         controller.movieId = id
         return controller
     }

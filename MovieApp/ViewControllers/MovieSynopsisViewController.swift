@@ -13,6 +13,7 @@ class MovieSynopsisViewController: UIViewController {
     @IBOutlet weak var labelSynopsis: UILabel!
     
     var overview: String?
+    let interactor = MovieDetailInteractor()
     
     static func instantiate() -> MovieSynopsisViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,6 +40,29 @@ class MovieSynopsisViewController: UIViewController {
         
         if let overview = overview {
             labelSynopsis.text = overview
+        }
+        
+        loadData()
+    }
+    
+    func loadData() {
+        if let movieId = PreferenceManager.instance.movieId {
+            interactor.loadWith(id: movieId)
+            if let movie = interactor.movie {
+                labelSynopsis.text = movie.desc
+            } else {
+                refresh(movieId: movieId)
+            }
+        }
+    }
+    
+    func refresh(movieId: Int64) {
+        interactor.refresh(withId: movieId, success: { () -> (Void) in
+            if let movie = self.interactor.movie {
+                self.labelSynopsis.text = movie.desc
+            }
+        }) { (error) -> (Void) in
+            print(error.localizedDescription)
         }
     }
 

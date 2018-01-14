@@ -35,6 +35,7 @@ class NowPlayingViewController: UIViewController {
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
         
         tableViewDataSetup()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
