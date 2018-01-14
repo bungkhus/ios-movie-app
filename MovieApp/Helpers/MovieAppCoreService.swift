@@ -20,7 +20,81 @@ open class MovieAppCoreService: NSObject {
         self.home = home
     }
     
-    func getAgenda(params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Agenda]>>) -> (Void)) {
+    func getMovieNowPlaying(params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Movie]>>) -> (Void)) {
+        var parameters: [String: AnyObject] = [:]
+        for (key, value) in params {
+            parameters[key] = value as AnyObject?
+        }
+        parameters["page"] = page as AnyObject?
+        let request = manager.request(home + "/movie/now_playing", method: .get, parameters: parameters)
+        request.responseJSON { response in
+            switch response.result {
+            case let .success(value):
+                let json = JSON(value)
+                let resultJson = json["results"]
+                let total = json["total_results"].intValue
+                let currentPage = json["page"].intValue
+                let lastPage = json["total_pages"].intValue
+                
+                if resultJson.arrayValue.count > 0 {
+                    var items = [Movie]()
+                    for itemJson in resultJson.arrayValue {
+                        if let item = Movie.with(json: itemJson) {
+                            items.append(item)
+                        }
+                    }
+                    let pagination = Pagination<[Movie]>(total: total, currentPage: currentPage, lastPage: lastPage, data: items)
+                    callback(.success(pagination))
+                } else {
+                    let error = NSError(domain: "The Movie DB", code: -1, userInfo: [NSLocalizedDescriptionKey: "Data doesn't exists."])
+                    print(error.localizedDescription)
+                    callback(.failure(error))
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+                callback(.failure(error as NSError))
+            }
+        }
+    }
+    
+    func getMovieUpcoming(params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Movie]>>) -> (Void)) {
+        var parameters: [String: AnyObject] = [:]
+        for (key, value) in params {
+            parameters[key] = value as AnyObject?
+        }
+        parameters["page"] = page as AnyObject?
+        let request = manager.request(home + "/movie/upcoming", method: .get, parameters: parameters)
+        request.responseJSON { response in
+            switch response.result {
+            case let .success(value):
+                let json = JSON(value)
+                let resultJson = json["results"]
+                let total = json["total_results"].intValue
+                let currentPage = json["page"].intValue
+                let lastPage = json["total_pages"].intValue
+                
+                if resultJson.arrayValue.count > 0 {
+                    var items = [Movie]()
+                    for itemJson in resultJson.arrayValue {
+                        if let item = Movie.with(json: itemJson) {
+                            items.append(item)
+                        }
+                    }
+                    let pagination = Pagination<[Movie]>(total: total, currentPage: currentPage, lastPage: lastPage, data: items)
+                    callback(.success(pagination))
+                } else {
+                    let error = NSError(domain: "The Movie DB", code: -1, userInfo: [NSLocalizedDescriptionKey: "Data doesn't exists."])
+                    print(error.localizedDescription)
+                    callback(.failure(error))
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+                callback(.failure(error as NSError))
+            }
+        }
+    }
+    
+    func getMoviePopular(params: [String : String], page: Int = 1, callback: @escaping (APIResult<Pagination<[Movie]>>) -> (Void)) {
         var parameters: [String: AnyObject] = [:]
         for (key, value) in params {
             parameters[key] = value as AnyObject?
@@ -32,19 +106,18 @@ open class MovieAppCoreService: NSObject {
             case let .success(value):
                 let json = JSON(value)
                 let resultJson = json["results"]
-                let total = resultJson["total_results"].intValue
-                let currentPage = resultJson["page"].intValue
-                let lastPage = resultJson["total_pages"].intValue
-                print("resultJson \(resultJson)")
-                print("resultJson.arrayValue \(resultJson.arrayValue.count)")
+                let total = json["total_results"].intValue
+                let currentPage = json["page"].intValue
+                let lastPage = json["total_pages"].intValue
+                
                 if resultJson.arrayValue.count > 0 {
-                    var items = [Agenda]()
+                    var items = [Movie]()
                     for itemJson in resultJson.arrayValue {
-                        if let item = Agenda.with(json: itemJson) {
+                        if let item = Movie.with(json: itemJson) {
                             items.append(item)
                         }
                     }
-                    let pagination = Pagination<[Agenda]>(total: total, currentPage: currentPage, lastPage: lastPage, data: items)
+                    let pagination = Pagination<[Movie]>(total: total, currentPage: currentPage, lastPage: lastPage, data: items)
                     callback(.success(pagination))
                 } else {
                     let error = NSError(domain: "The Movie DB", code: -1, userInfo: [NSLocalizedDescriptionKey: "Data doesn't exists."])
@@ -68,7 +141,7 @@ open class BaseSessionManager: SessionManager {
     
     override open func request(_ url: URLConvertible, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest {
         var overidedParameters = [String: AnyObject]()
-        overidedParameters["api_key"] = "67a91f25536ac02e6a7b9e11c85c9306" as AnyObject
+        overidedParameters["api_key"] = ApiConfig.apiKey as AnyObject
         if let parameters = parameters {
             for (key, value) in parameters {
                 overidedParameters[key] = value as AnyObject?

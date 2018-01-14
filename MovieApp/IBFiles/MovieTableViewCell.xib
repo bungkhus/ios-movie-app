@@ -6,35 +6,102 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MovieTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="81" id="hEb-ps-6TE" customClass="MovieTableViewCell" customModule="MovieApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MovieTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="95" id="hEb-ps-6TE" customClass="MovieTableViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hEb-ps-6TE" id="hg0-W5-cWC">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-zZ-PWE">
-                        <rect key="frame" x="8" y="8" width="359" height="64.5"/>
+                        <rect key="frame" x="8" y="8.5" width="359" height="85"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-button" translatesAutoresizingMaskIntoConstraints="NO" id="8Ax-yw-Lwd">
+                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Ax-yw-Lwd" secondAttribute="height" multiplier="2:3" id="9BE-03-sIt"/>
+                                    <constraint firstAttribute="height" constant="76" id="or4-qb-Ydw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="It" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Uwv-ea-wJa">
+                                <rect key="frame" x="58.5" y="8" width="235.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pw-VS-Gcw">
+                                <rect key="frame" x="58.5" y="27.5" width="292.5" height="49.5"/>
+                                <string key="text">In a small town in Maine, seven children known as The Losers Club come face to face with life problems, bullies and a monster that takes the shape of a clown called Pennywise.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites" translatesAutoresizingMaskIntoConstraints="NO" id="s9s-b4-fot">
+                                <rect key="frame" x="331" y="8" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="VEY-4v-hMu"/>
+                                    <constraint firstAttribute="width" constant="20" id="YoS-5K-XKy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-iC-gFS">
+                                <rect key="frame" x="308.5" y="9.5" width="18.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8pw-VS-Gcw" secondAttribute="bottom" constant="8" id="684-Jf-5nV"/>
+                            <constraint firstAttribute="bottom" secondItem="8Ax-yw-Lwd" secondAttribute="bottom" id="6Vy-3R-rFn"/>
+                            <constraint firstItem="s9s-b4-fot" firstAttribute="leading" secondItem="Yfx-iC-gFS" secondAttribute="trailing" constant="4" id="7ZE-5J-k9b"/>
+                            <constraint firstItem="Uwv-ea-wJa" firstAttribute="top" secondItem="sjv-zZ-PWE" secondAttribute="top" constant="8" id="Cef-Sz-ak0"/>
+                            <constraint firstItem="s9s-b4-fot" firstAttribute="top" secondItem="sjv-zZ-PWE" secondAttribute="top" constant="8" id="PBw-DZ-M8d"/>
+                            <constraint firstAttribute="trailing" secondItem="s9s-b4-fot" secondAttribute="trailing" constant="8" id="Pgf-mZ-W1J"/>
+                            <constraint firstItem="8pw-VS-Gcw" firstAttribute="leading" secondItem="8Ax-yw-Lwd" secondAttribute="trailing" constant="8" id="RaT-FA-ttE"/>
+                            <constraint firstAttribute="trailing" secondItem="8pw-VS-Gcw" secondAttribute="trailing" constant="8" id="Yx7-qI-QDV"/>
+                            <constraint firstItem="8Ax-yw-Lwd" firstAttribute="leading" secondItem="sjv-zZ-PWE" secondAttribute="leading" id="giz-Us-J7m"/>
+                            <constraint firstItem="8pw-VS-Gcw" firstAttribute="top" secondItem="Uwv-ea-wJa" secondAttribute="bottom" id="mff-PK-De5"/>
+                            <constraint firstItem="Uwv-ea-wJa" firstAttribute="leading" secondItem="8Ax-yw-Lwd" secondAttribute="trailing" constant="8" id="ouB-H0-qaw"/>
+                            <constraint firstAttribute="trailing" secondItem="Uwv-ea-wJa" secondAttribute="trailing" constant="65" id="xSS-oV-DdJ"/>
+                            <constraint firstItem="8Ax-yw-Lwd" firstAttribute="top" secondItem="sjv-zZ-PWE" secondAttribute="top" id="xo6-9X-ZlF"/>
+                            <constraint firstItem="Yfx-iC-gFS" firstAttribute="centerY" secondItem="s9s-b4-fot" secondAttribute="centerY" id="yjU-ja-gj2"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="sjv-zZ-PWE" firstAttribute="leading" secondItem="hg0-W5-cWC" secondAttribute="leading" constant="8" id="5av-GM-J5J"/>
-                    <constraint firstItem="sjv-zZ-PWE" firstAttribute="top" secondItem="hg0-W5-cWC" secondAttribute="top" constant="8" id="7px-Lo-nKP"/>
-                    <constraint firstAttribute="bottom" secondItem="sjv-zZ-PWE" secondAttribute="bottom" constant="8" id="Sf2-z9-jxu"/>
+                    <constraint firstAttribute="bottom" secondItem="sjv-zZ-PWE" secondAttribute="bottom" id="LG7-te-cHg"/>
+                    <constraint firstItem="Uwv-ea-wJa" firstAttribute="top" secondItem="hg0-W5-cWC" secondAttribute="top" constant="16" id="NuR-QA-OeU"/>
                     <constraint firstAttribute="trailing" secondItem="sjv-zZ-PWE" secondAttribute="trailing" constant="8" id="hRn-62-Jg7"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cardView" destination="sjv-zZ-PWE" id="XxO-Aq-1Bb"/>
+                <outlet property="imagePoster" destination="8Ax-yw-Lwd" id="bui-iY-bJz"/>
+                <outlet property="labelOverview" destination="8pw-VS-Gcw" id="U0r-tk-tY2"/>
+                <outlet property="labelRating" destination="Yfx-iC-gFS" id="SUm-ME-qTs"/>
+                <outlet property="labelTitle" destination="Uwv-ea-wJa" id="ACo-YK-aaZ"/>
             </connections>
-            <point key="canvasLocation" x="48.5" y="-13.5"/>
+            <point key="canvasLocation" x="48.5" y="-6.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favorites" width="85" height="85"/>
+        <image name="play-button" width="21" height="21"/>
+    </resources>
 </document>

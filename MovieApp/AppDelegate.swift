@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        MovieAppCore.setup(home: "https://api.themoviedb.org/3")
+        MovieAppCore.setup(home: ApiConfig.homeUrl)
         
         return true
     }

@@ -28,9 +28,9 @@ class PopularViewController: UIViewController {
         tableView.dataSource = self
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
-        tableView.contentInset = UIEdgeInsetsMake(4, 0, 4, 0)
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 416
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
+        tableView.rowHeight = 100 //UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 124
         
         setupTableView()
     }
@@ -97,13 +97,22 @@ class PopularViewController: UIViewController {
 extension PopularViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //interactor.movies.count
+        return interactor.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-
+        cell.selectionStyle = .none
+        if self.interactor.movies.count > 0 {
+            cell.popular = self.interactor.movies[indexPath.row]
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetailSID")
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }

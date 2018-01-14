@@ -88,7 +88,7 @@ extension UIViewController {
 //        var items = [UIBarButtonItem]()
         if let title = title {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-            label.textColor = UIColor.primary()
+//            label.textColor = UIColor.primary()
             label.textAlignment = .center
             label.text = title
             label.font = UIFont.systemFont(ofSize: 18)

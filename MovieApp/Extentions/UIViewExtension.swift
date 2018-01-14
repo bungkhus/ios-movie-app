@@ -66,7 +66,7 @@ extension UIView {
         layer.masksToBounds = false
         clipsToBounds = false
         
-        layer.cornerRadius = 4
+        layer.cornerRadius = 0
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.1

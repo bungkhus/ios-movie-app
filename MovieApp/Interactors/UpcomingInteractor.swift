@@ -17,7 +17,7 @@ class UpcomingInteractor: BaseInteractor {
         return currentPage != -1
     }
     
-    var movies: [Agenda] = [Agenda]()
+    var movies: [Movie] = [Movie]()
     
     func loadKey() {
         movies.removeAll()
@@ -27,8 +27,8 @@ class UpcomingInteractor: BaseInteractor {
         {
             let json = JSON.parse(value)
             for child in json.arrayValue {
-                if let item = realm.object(ofType: Agenda.self, forPrimaryKey: child.rawValue as AnyObject) {
-                    movies.append(Agenda(value: item))
+                if let item = realm.object(ofType: Movie.self, forPrimaryKey: child.rawValue as AnyObject) {
+                    movies.append(Movie(value: item))
                 }
             }
         }
@@ -42,7 +42,7 @@ class UpcomingInteractor: BaseInteractor {
     func nextWith(success: @escaping () -> (Void), failure: @escaping (NSError) -> (Void)) {
         //var params = [String: String]()
         
-        service.getAgenda(params: params, page: currentPage, callback: { result in
+        service.getMovieUpcoming(params: params, page: currentPage, callback: { result in
             switch result {
             case let .success(pagination) :
                 if pagination.currentPage == 1 || pagination.currentPage == 0 {
