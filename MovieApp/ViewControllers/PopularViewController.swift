@@ -29,8 +29,7 @@ class PopularViewController: UIViewController {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
-        tableView.rowHeight = 100 //UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 124
+        tableView.rowHeight = 100
         
         setupTableView()
     }

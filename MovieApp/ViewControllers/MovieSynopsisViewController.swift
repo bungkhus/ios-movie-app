@@ -12,6 +12,12 @@ class MovieSynopsisViewController: UIViewController {
     
     @IBOutlet weak var labelSynopsis: UILabel!
     
+    static func instantiate() -> MovieSynopsisViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MovieSynopsisSID") as! MovieSynopsisViewController
+        return controller
+    }
+    
     func setupView(movie: Movie)  {
         if labelSynopsis != nil {
             labelSynopsis.text = movie.desc

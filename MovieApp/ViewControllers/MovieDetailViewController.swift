@@ -18,6 +18,7 @@ class MovieDetailViewController: MXSegmentedPagerController {
     private let xib = Bundle.main.loadNibNamed("MovieDetailHeader", owner: nil, options: nil)?[0] as! MovieDetailHeader
     
     private var movieId:Int64 = 0
+    private var refreshed = false
     
     static func instantiate(id: Int64) -> MovieDetailViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -53,6 +54,22 @@ class MovieDetailViewController: MXSegmentedPagerController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if !refreshed {
+            SVProgressHUD.show()
+            interactor.refresh(withId: movieId, success: { () -> (Void) in
+                if let movie = self.interactor.movie {
+//                    MovieSynopsisViewController.instantiate().setupView(movie: movie)
+                    self.updateHeader()
+                    self.refreshed = true
+                    SVProgressHUD.dismiss()
+                }
+            }) { (error) -> (Void) in
+                print(error.localizedDescription)
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+                SVProgressHUD.dismiss(withDelay: 2.0)
+                
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,28 +87,29 @@ class MovieDetailViewController: MXSegmentedPagerController {
         
     }
     
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        print("perform \(identifier)")
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare \(segue.identifier)")
+//        print("prepare \(segue.identifier)")
         if segue.identifier == "mx_page_0" {
             let controller = segue.destination as! MovieSynopsisViewController
             if let movie = self.interactor.movie {
                 controller.setupView(movie: movie)
                 self.updateHeader()
                 
-                interactor.refresh(withId: movieId, success: { () -> (Void) in
-                    if let movie = self.interactor.movie {
-                        controller.setupView(movie: movie)
-                        self.updateHeader()
+                if !refreshed {
+                    SVProgressHUD.show()
+                    interactor.refresh(withId: movieId, success: { () -> (Void) in
+                        if let movie = self.interactor.movie {
+                            controller.setupView(movie: movie)
+                            self.updateHeader()
+                            self.refreshed = true
+                            SVProgressHUD.dismiss()
+                        }
+                    }) { (error) -> (Void) in
+                        print(error.localizedDescription)
+                        SVProgressHUD.showError(withStatus: error.localizedDescription)
+                        SVProgressHUD.dismiss(withDelay: 2.0)
+                        
                     }
-                }) { (error) -> (Void) in
-                    print(error.localizedDescription)
-                    SVProgressHUD.showError(withStatus: error.localizedDescription)
-                    SVProgressHUD.dismiss(withDelay: 2.0)
-                    
                 }
             }
         } else if segue.identifier == "mx_page_2" {
