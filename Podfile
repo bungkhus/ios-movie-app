@@ -14,5 +14,6 @@ target 'MovieApp' do
   pod 'AlamofireImage'
   pod 'DZNEmptyDataSet'
   pod 'youtube-ios-player-helper', '~> 0.1.4'
+  pod 'ModernSearchBar'
 
 end

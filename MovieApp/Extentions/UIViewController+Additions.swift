@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     
 //    func setupShareButton(white: Bool = false) {
-//        let barButtonItemShare = UIBarButtonItem(image: UIImage(named: "ic_share"), style: .plain, target: self, action: #selector(UIViewController.sharePressed(_:)))
+//        let barButtonItemShare = UIBarButtonItem(image: UIImage(named: "star"), style: .plain, target: self, action: #selector(UIViewController.sharePressed(_:)))
 //        barButtonItemShare.tintColor = white ? UIColor.white : UIColor(hex: 0x232323)
 //        navigationItem.rightBarButtonItem = barButtonItemShare
 //    }
