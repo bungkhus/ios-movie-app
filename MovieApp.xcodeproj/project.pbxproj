@@ -38,9 +38,7 @@
 		8F866C98200AE2D5005072F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F866C96200AE2D5005072F9 /* LaunchScreen.storyboard */; };
 		8F866D19200B153D005072F9 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D13200B153C005072F9 /* UIViewExtension.swift */; };
 		8F866D1A200B153D005072F9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D14200B153C005072F9 /* UIColor+Extension.swift */; };
-		8F866D1B200B153D005072F9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D15200B153C005072F9 /* StringExtension.swift */; };
 		8F866D1C200B153D005072F9 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D16200B153C005072F9 /* UIViewController+Additions.swift */; };
-		8F866D1D200B153D005072F9 /* UISoryboard+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D17200B153C005072F9 /* UISoryboard+Extention.swift */; };
 		8F866D22200B154D005072F9 /* MovieAppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D1F200B154C005072F9 /* MovieAppCore.swift */; };
 		8F866D23200B154D005072F9 /* MovieAppCoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D20200B154C005072F9 /* MovieAppCoreService.swift */; };
 		8F866D24200B154D005072F9 /* DetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F866D21200B154D005072F9 /* DetachableObject.swift */; };
@@ -122,9 +120,7 @@
 		8F866D07200AF436005072F9 /* Pods_SuitmobileCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SuitmobileCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F866D13200B153C005072F9 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8F866D14200B153C005072F9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		8F866D15200B153C005072F9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8F866D16200B153C005072F9 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
-		8F866D17200B153C005072F9 /* UISoryboard+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISoryboard+Extention.swift"; sourceTree = "<group>"; };
 		8F866D1F200B154C005072F9 /* MovieAppCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAppCore.swift; sourceTree = "<group>"; };
 		8F866D20200B154C005072F9 /* MovieAppCoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAppCoreService.swift; sourceTree = "<group>"; };
 		8F866D21200B154D005072F9 /* DetachableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetachableObject.swift; sourceTree = "<group>"; };
@@ -398,9 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				8F866D2F200B2A4E005072F9 /* ISO8601.swift */,
-				8F866D15200B153C005072F9 /* StringExtension.swift */,
 				8F866D14200B153C005072F9 /* UIColor+Extension.swift */,
-				8F866D17200B153C005072F9 /* UISoryboard+Extention.swift */,
 				8F866D16200B153C005072F9 /* UIViewController+Additions.swift */,
 				8F866D13200B153C005072F9 /* UIViewExtension.swift */,
 			);
@@ -533,9 +527,9 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/ISO8601/ISO8601.framework",
-				"${BUILT_PRODUCTS_DIR}/ModernSearchBar/ModernSearchBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SBSearchBar/SBSearchBar.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -547,9 +541,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISO8601.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ModernSearchBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SBSearchBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -586,8 +580,6 @@
 				8F866D32200B2DF5005072F9 /* NowPlayingViewController.swift in Sources */,
 				8F19E615200B8FC400CC897A /* MXParallaxHeader.m in Sources */,
 				8F19E5FD200B673A00CC897A /* ApiConfig.swift in Sources */,
-				8F866D1D200B153D005072F9 /* UISoryboard+Extention.swift in Sources */,
-				8F866D1B200B153D005072F9 /* StringExtension.swift in Sources */,
 				8F866D23200B154D005072F9 /* MovieAppCoreService.swift in Sources */,
 				8F19E62D200BB1EC00CC897A /* MovieSynopsisViewController.swift in Sources */,
 				8F866D46200B3628005072F9 /* NowPlayingInteractor.swift in Sources */,

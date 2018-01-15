@@ -9,6 +9,8 @@
 import UIKit
 import DZNEmptyDataSet
 import SVProgressHUD
+import SBSearchBar
+import RealmSwift
 
 class NowPlayingViewController: UIViewController {
 
@@ -16,7 +18,6 @@ class NowPlayingViewController: UIViewController {
     
     let interactor = NowPlayingInteractor(perPage: 20, storeKey: "NowPlaying")
     var refreshed = false
-//    var loadOnAppear = false
     
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
@@ -26,7 +27,7 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTitle("Now Playing")
+//        setupTitle("Now Playing")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -35,16 +36,11 @@ class NowPlayingViewController: UIViewController {
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
         
         tableViewDataSetup()
-        
+        self.searchView().delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        if loadOnAppear {
-//            loadData()
-//        }
-//        loadOnAppear = true
         
         if !refreshed {
             if interactor.movies.count > 0 {
@@ -167,5 +163,49 @@ extension NowPlayingViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelega
     
     func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
         return 20
+    }
+}
+
+// MARK: - SBSearchBar
+
+extension NowPlayingViewController: SBSearchBarDelegate {
+    func sbSearchBarTextDidEndEditing(_ searchBar: SBSearchBar) {
+        self.loadData()
+    }
+    
+    func sbSearchBarCancelButtonClicked(_ searchBar: SBSearchBar) {
+        self.loadData()
+    }
+    
+    func sbSearchBarSearchButtonClicked(_ searchBar: SBSearchBar) {
+        print("sbSearchBarSearchButtonClicked")
+    }
+    
+    func sbSearchBarTextDidBeginEditing(_ searchBar: SBSearchBar) {
+        print("sbSearchBarTextDidBeginEditing")
+    }
+    
+    func sbSearchBarShouldEndEditing(_ searchBar: SBSearchBar) -> Bool {
+        return false
+    }
+    
+    func sbSearchBarShouldBeginEditing(_ searchBar: SBSearchBar) -> Bool {
+        return false
+    }
+    
+    func sbSearchBarTextDidChange(_ searchBar: SBSearchBar, text searchText: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.interactor.movies.removeAll()
+            if (searchText.characters.count) > 0{
+                let realm = try! Realm()
+                let predicate = NSPredicate(format: "title CONTAINS [c] %@", searchText)
+                let filtered_people = realm.objects(Movie.self).filter(predicate)
+                for each in filtered_people{
+                    self.interactor.movies.append(each)
+                    self.collectionView.reloadData()
+                }
+                self.collectionView.reloadData()
+            }
+        }
     }
 }

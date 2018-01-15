@@ -10,6 +10,8 @@ import UIKit
 import SVPullToRefresh
 import SVProgressHUD
 import DZNEmptyDataSet
+import SBSearchBar
+import RealmSwift
 
 class PopularViewController: UIViewController {
 
@@ -21,7 +23,7 @@ class PopularViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTitle("Popular")
+//        setupTitle("Popular")
 
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
         tableView.delegate = self
@@ -32,6 +34,7 @@ class PopularViewController: UIViewController {
         tableView.rowHeight = 100
         
         setupTableView()
+        self.searchView().delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,4 +137,48 @@ extension PopularViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
         return 20
     }
     
+}
+
+// MARK: - SBSearchBar
+
+extension PopularViewController: SBSearchBarDelegate {
+    func sbSearchBarTextDidEndEditing(_ searchBar: SBSearchBar) {
+        self.loadData()
+    }
+    
+    func sbSearchBarCancelButtonClicked(_ searchBar: SBSearchBar) {
+        self.loadData()
+    }
+    
+    func sbSearchBarSearchButtonClicked(_ searchBar: SBSearchBar) {
+        print("sbSearchBarSearchButtonClicked")
+    }
+    
+    func sbSearchBarTextDidBeginEditing(_ searchBar: SBSearchBar) {
+        print("sbSearchBarTextDidBeginEditing")
+    }
+    
+    func sbSearchBarShouldEndEditing(_ searchBar: SBSearchBar) -> Bool {
+        return false
+    }
+    
+    func sbSearchBarShouldBeginEditing(_ searchBar: SBSearchBar) -> Bool {
+        return false
+    }
+    
+    func sbSearchBarTextDidChange(_ searchBar: SBSearchBar, text searchText: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.interactor.movies.removeAll()
+            if (searchText.characters.count) > 0{
+                let realm = try! Realm()
+                let predicate = NSPredicate(format: "title CONTAINS [c] %@", searchText)
+                let filtered_people = realm.objects(Movie.self).filter(predicate)
+                for each in filtered_people{
+                    self.interactor.movies.append(each)
+                    self.tableView.reloadData()
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
